@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @article.title %>
+  <%#= link_to "Index", article_path(article), class: 'btn btn-default' %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @article.content %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @article.user.email %>
+</p>
+
+
+
+<p>
+  <strong>Comments:</strong>
+  <br>
+  <% @article.comments.each do |comments| %>
+    <tr>
+      <td><%= comments.message %></td><br>
+    </tr>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>
